@@ -7,8 +7,9 @@
     <title>Talents Legacy</title>
 
     <style>
+
         /* =========================
-           CSS
+           CSS GÉNÉRAL
         ========================= */
 
         * {
@@ -24,7 +25,10 @@
             min-height: 100vh;
         }
 
-        /* HEADER */
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             background: #151515;
@@ -63,7 +67,10 @@
             background: #e63946;
         }
 
-        /* CONTENU */
+
+        /* =========================
+           CONTENU
+        ========================= */
 
         main {
             max-width: 1100px;
@@ -81,6 +88,7 @@
         }
 
         @keyframes apparition {
+
             from {
                 opacity: 0;
                 transform: translateY(15px);
@@ -90,6 +98,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
         h1 {
@@ -109,7 +118,10 @@
             color: #bbb;
         }
 
-        /* ACCUEIL */
+
+        /* =========================
+           ACCUEIL
+        ========================= */
 
         .hero {
             text-align: center;
@@ -145,7 +157,10 @@
             transform: scale(1.05);
         }
 
-        /* STAFF */
+
+        /* =========================
+           STAFF
+        ========================= */
 
         .staff-container {
             display: grid;
@@ -190,7 +205,26 @@
             color: #e63946;
         }
 
-        /* RÉSULTATS */
+
+        /* =========================
+           ROSTERS JOUEURS
+        ========================= */
+
+        .roster {
+            margin-bottom: 60px;
+        }
+
+        .roster-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+
+        /* =========================
+           RÉSULTATS
+        ========================= */
 
         .results {
             max-width: 800px;
@@ -226,7 +260,10 @@
             color: #e63946;
         }
 
-        /* RÉSEAUX */
+
+        /* =========================
+           RÉSEAUX
+        ========================= */
 
         .social-container {
             max-width: 600px;
@@ -255,7 +292,12 @@
         }
 
         .instagram {
-            background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5);
+            background: linear-gradient(
+                45deg,
+                #feda75,
+                #d62976,
+                #4f5bd5
+            );
         }
 
         .youtube {
@@ -271,7 +313,10 @@
             background: #5865f2;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
@@ -281,7 +326,10 @@
             color: #666;
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 700px) {
 
@@ -316,11 +364,19 @@
             .match {
                 font-size: 14px;
             }
+
+            .roster-title {
+                font-size: 25px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- =========================
          MENU
@@ -333,25 +389,37 @@
         </div>
 
         <nav>
-            <button class="menu active" onclick="showPage('accueil', this)">
+
+            <button
+                class="menu active"
+                onclick="showPage('accueil', this)">
                 Accueil
             </button>
 
-            <button class="menu" onclick="showPage('staff', this)">
+            <button
+                class="menu"
+                onclick="showPage('staff', this)">
                 Staff
             </button>
 
-            <button class="menu" onclick="showPage('resultats', this)">
+            <button
+                class="menu"
+                onclick="showPage('resultats', this)">
                 Résultats
             </button>
 
-            <button class="menu" onclick="showPage('reseaux', this)">
+            <button
+                class="menu"
+                onclick="showPage('reseaux', this)">
                 Réseaux
             </button>
 
-            <button class="menu" onclick="showPage('joueurs', this)">
+            <button
+                class="menu"
+                onclick="showPage('joueurs', this)">
                 Joueurs
             </button>
+
         </nav>
 
     </header>
@@ -363,9 +431,14 @@
 
     <main>
 
-        <!-- ACCUEIL -->
 
-        <section id="accueil" class="page active">
+        <!-- =========================
+             ACCUEIL
+        ========================== -->
+
+        <section
+            id="accueil"
+            class="page active">
 
             <div class="hero">
 
@@ -381,7 +454,9 @@
                 <button
                     class="hero-button"
                     onclick="showPageByName('resultats')">
+
                     Voir nos résultats
+
                 </button>
 
             </div>
@@ -389,23 +464,35 @@
         </section>
 
 
-        <!-- STAFF -->
+        <!-- =========================
+             STAFF
+        ========================== -->
 
-        <section id="staff" class="page">
+        <section
+            id="staff"
+            class="page">
 
-            <h2>Notre Staff</h2>
+            <h2>
+                Notre Staff
+            </h2>
+
 
             <div class="staff-container">
 
+
                 <div class="staff-card">
 
                     <div class="photo">
                         PHOTO
                     </div>
 
-                    <h3>Shyro</h3>
+                    <h3>
+                        Shyro
+                    </h3>
 
-                    <p>Proprio</p>
+                    <p>
+                        Proprio
+                    </p>
 
                 </div>
 
@@ -416,9 +503,13 @@
                         PHOTO
                     </div>
 
-                    <h3>Pineapple</h3>
+                    <h3>
+                        Pineapple
+                    </h3>
 
-                    <p>Co-Proprio</p>
+                    <p>
+                        Co-Proprio
+                    </p>
 
                 </div>
 
@@ -429,22 +520,34 @@
                         PHOTO
                     </div>
 
-                    <h3>Antaax</h3>
+                    <h3>
+                        Antaax
+                    </h3>
 
-                    <p>Assistant</p>
+                    <p>
+                        Assistant
+                    </p>
 
                 </div>
+
 
             </div>
 
         </section>
 
 
-        <!-- RÉSULTATS -->
+        <!-- =========================
+             RÉSULTATS
+        ========================== -->
 
-        <section id="resultats" class="page">
+        <section
+            id="resultats"
+            class="page">
 
-            <h2>Nos Résultats</h2>
+            <h2>
+                Nos Résultats
+            </h2>
+
 
             <div class="results">
 
@@ -469,203 +572,398 @@
         </section>
 
 
-        <!-- RÉSEAUX -->
+        <!-- =========================
+             RÉSEAUX
+        ========================== -->
 
-        <section id="reseaux" class="page">
+        <section
+            id="reseaux"
+            class="page">
 
-            <h2>Nos Réseaux</h2>
+            <h2>
+                Nos Réseaux
+            </h2>
+
 
             <div class="social-container">
 
-                <a href="#" class="social instagram">
+                <a
+                    href="#"
+                    class="social instagram">
+
                     📸 Instagram
+
                 </a>
 
-                <a href="#" class="social youtube">
+
+                <a
+                    href="#"
+                    class="social youtube">
+
                     ▶️ YouTube
+
                 </a>
 
-                <a href="#" class="social tiktok">
+
+                <a
+                    href="#"
+                    class="social tiktok">
+
                     🎵 TikTok
+
                 </a>
 
-                <a href="#" class="social discord">
+
+                <a
+                    href="#"
+                    class="social discord">
+
                     💬 Discord
+
                 </a>
 
             </div>
 
         </section>
 
-        <!-- JOUEURS -->
 
-        <section id="joueurs" class="page">
+        <!-- =========================
+             JOUEURS
+        ========================== -->
 
-            <h2>Nos Joueurs</h2>
+        <section
+            id="joueurs"
+            class="page">
 
-            <h3>Roster Esport</h3>
+            <h2>
+                Nos Joueurs
+            </h2>
 
-            <div class="staff-container">
 
-                <div class="staff-card">
+            <!-- =========================
+                 ROSTER ESPORT
+            ========================== -->
 
-                    <div class="photo">
-                        PHOTO
+            <div class="roster">
+
+                <h3 class="roster-title">
+                    Roster Esport
+                </h3>
+
+
+                <div class="staff-container">
+
+
+                    <div class="staff-card">
+
+                        <div class="photo">
+                            PHOTO
+                        </div>
+
+                        <h3>
+                            Ogato
+                        </h3>
+
+                        <p>
+                            Capitaine
+                        </p>
+
                     </div>
 
-                    <h3>Ogato</h3>
 
-                    <p>Capitaine</p>
+                    <div class="staff-card">
 
-                </div>
+                        <div class="photo">
+                            PHOTO
+                        </div>
 
+                        <h3>
+                            Xylerr
+                        </h3>
 
-                <div class="staff-card">
+                        <p>
+                            Joueur
+                        </p>
 
-                    <div class="photo">
-                        PHOTO
                     </div>
 
-                    <h3>Xylerr</h3>
 
-                    <p>Joueur</p>
+                    <div class="staff-card">
 
-                </div>
+                        <div class="photo">
+                            PHOTO
+                        </div>
 
+                        <h3>
+                            en recherche...
+                        </h3>
 
-                <div class="staff-card">
+                        <p>
+                            Joueur
+                        </p>
 
-                    <div class="photo">
-                        PHOTO
                     </div>
 
-                    <h3>en recherche...</h3>
-
-                    <p>Joueur</p>
 
                 </div>
-
-            <h3>Roster Académique</h3>
-
-            <div class="staff-container">
-
-                <div class="staff-card">
-
-                    <div class="photo">
-                        PHOTO
-                    </div>
-
-                    <h3>Searl</h3>
-
-                    <p>Capitaine</p>
-
-                </div>
-
-                <div class="staff-card">
-
-                    <div class="photo">
-                        PHOTO
-                    </div>
-
-                    <h3>Siroj</h3>
-
-                    <p>Joueur</p>
-
-                </div>
-
-                <div class="staff-card">
-
-                    <div class="photo">
-                        PHOTO
-                    </div>
-
-                    <h3>Natsu</h3>
-
-                    <p>Joueur</p>
-
-                </div>
-
-
-
 
             </div>
 
+
+            <!-- =========================
+                 ROSTER ACADÉMIQUE
+            ========================== -->
+
+            <div class="roster">
+
+                <h3 class="roster-title">
+                    Roster Académique
+                </h3>
+
+
+                <div class="staff-container">
+
+
+                    <div class="staff-card">
+
+                        <div class="photo">
+                            PHOTO
+                        </div>
+
+                        <h3>
+                            Searl
+                        </h3>
+
+                        <p>
+                            Capitaine
+                        </p>
+
+                    </div>
+
+
+                    <div class="staff-card">
+
+                        <div class="photo">
+                            PHOTO
+                        </div>
+
+                        <h3>
+                            Siroj
+                        </h3>
+
+                        <p>
+                            Joueur
+                        </p>
+
+                    </div>
+
+
+                    <div class="staff-card">
+
+                        <div class="photo">
+                            PHOTO
+                        </div>
+
+                        <h3>
+                            Natsu
+                        </h3>
+
+                        <p>
+                            Joueur
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 3E ROSTER
+            ========================== -->
+
+            <div class="roster">
+
+                <h3 class="roster-title">
+                    Roster Talent
+                </h3>
+
+
+                <div class="staff-container">
+
+
+                    <div class="staff-card">
+
+                        <div class="photo">
+                            PHOTO
+                        </div>
+
+                        <h3>
+                            Shyro
+                        </h3>
+
+                        <p>
+                            Capitaine
+                        </p>
+
+                    </div>
+
+
+                    <div class="staff-card">
+
+                        <div class="photo">
+                            PHOTO
+                        </div>
+
+                        <h3>
+                            OnFire
+                        </h3>
+
+                        <p>
+                            Joueur
+                        </p>
+
+                    </div>
+
+
+                    <div class="staff-card">
+
+                        <div class="photo">
+                            PHOTO
+                        </div>
+
+                        <h3>
+                            en recherche...
+                        </h3>
+
+                        <p>
+                            Joueur
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
         </section>
-
-
 
 
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
+
         © 2026 Mon Équipe — Tous droits réservés
+
     </footer>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script>
 
-        /* =========================
-           JAVASCRIPT
-        ========================== */
 
         function showPage(pageName, button) {
 
+
             // Cacher toutes les pages
-            const pages = document.querySelectorAll(".page");
+
+            const pages =
+                document.querySelectorAll(".page");
+
 
             pages.forEach(function(page) {
+
                 page.classList.remove("active");
+
             });
 
 
             // Afficher la page demandée
-            const page = document.getElementById(pageName);
+
+            const page =
+                document.getElementById(pageName);
+
 
             if (page) {
+
                 page.classList.add("active");
+
             }
 
 
-            // Retirer la classe active des boutons
-            const buttons = document.querySelectorAll(".menu");
+            // Retirer active des boutons
+
+            const buttons =
+                document.querySelectorAll(".menu");
+
 
             buttons.forEach(function(btn) {
+
                 btn.classList.remove("active");
+
             });
 
 
             // Activer le bouton sélectionné
+
             if (button) {
+
                 button.classList.add("active");
+
             }
 
-            // Retour en haut de la page
+
+            // Retour en haut
+
             window.scrollTo({
+
                 top: 0,
+
                 behavior: "smooth"
+
             });
+
         }
 
 
-        // Permet au bouton de l'accueil
-        // d'ouvrir la page Résultats
+        // Bouton de l'accueil
 
         function showPageByName(pageName) {
 
-            const buttons = document.querySelectorAll(".menu");
+
+            const buttons =
+                document.querySelectorAll(".menu");
+
 
             buttons.forEach(function(button) {
 
+
                 if (
+
                     button.textContent
                         .trim()
                         .toLowerCase()
                         .includes(pageName)
+
                 ) {
-                    showPage(pageName, button);
+
+                    showPage(
+                        pageName,
+                        button
+                    );
+
                 }
 
             });
@@ -673,6 +971,7 @@
         }
 
     </script>
+
 
 </body>
 </html>

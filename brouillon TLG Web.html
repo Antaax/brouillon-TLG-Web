@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mon Équipe</title>
+
+    <style>
+        /* =========================
+           CSS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #151515;
+            border-bottom: 2px solid #e63946;
+            padding: 20px 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav button {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 12px 18px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav button:hover,
+        nav button.active {
+            background: #e63946;
+        }
+
+        /* CONTENU */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .page {
+            display: none;
+            animation: apparition 0.4s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes apparition {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #e63946;
+        }
+
+        p {
+            color: #bbb;
+        }
+
+        /* ACCUEIL */
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+        }
+
+        .hero h1 span {
+            color: #e63946;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-button {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #ff5360;
+            transform: scale(1.05);
+        }
+
+        /* STAFF */
+
+        .staff-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .staff-card {
+            background: #191919;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-5px);
+            border-color: #e63946;
+        }
+
+        .photo {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+
+            background: #292929;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #777;
+        }
+
+        .staff-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .staff-card p {
+            color: #e63946;
+        }
+
+        /* RÉSULTATS */
+
+        .results {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .match {
+            background: #191919;
+            border-left: 5px solid #2ecc71;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .match.defaite {
+            border-left-color: #e63946;
+        }
+
+        .match .score {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .win {
+            color: #2ecc71;
+        }
+
+        .lose {
+            color: #e63946;
+        }
+
+        /* RÉSEAUX */
+
+        .social-container {
+            max-width: 600px;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social {
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .social:hover {
+            transform: scale(1.03);
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5);
+        }
+
+        .youtube {
+            background: #ff0000;
+        }
+
+        .tiktok {
+            background: #111;
+            border: 1px solid #555;
+        }
+
+        .discord {
+            background: #5865f2;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .staff-container {
+                grid-template-columns: 1fr;
+            }
+
+            .match {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            MON ÉQUIPE
+        </div>
+
+        <nav>
+            <button class="menu active" onclick="showPage('accueil', this)">
+                Accueil
+            </button>
+
+            <button class="menu" onclick="showPage('staff', this)">
+                Staff
+            </button>
+
+            <button class="menu" onclick="showPage('resultats', this)">
+                Résultats
+            </button>
+
+            <button class="menu" onclick="showPage('reseaux', this)">
+                Réseaux
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENU
+    ========================== -->
+
+    <main>
+
+        <!-- ACCUEIL -->
+
+        <section id="accueil" class="page active">
+
+            <div class="hero">
+
+                <h1>
+                    BIENVENUE SUR<br>
+                    <span>MON ÉQUIPE</span>
+                </h1>
+
+                <p>
+                    Retrouvez toutes les informations de notre équipe.
+                </p>
+
+                <button
+                    class="hero-button"
+                    onclick="showPageByName('resultats')">
+                    Voir nos résultats
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- STAFF -->
+
+        <section id="staff" class="page">
+
+            <h2>Notre Staff</h2>
+
+            <div class="staff-container">
+
+                <div class="staff-card">
+
+                    <div class="photo">
+                        PHOTO
+                    </div>
+
+                    <h3>Prénom Nom</h3>
+
+                    <p>Coach principal</p>
+
+                </div>
+
+
+                <div class="staff-card">
+
+                    <div class="photo">
+                        PHOTO
+                    </div>
+
+                    <h3>Prénom Nom</h3>
+
+                    <p>Manager</p>
+
+                </div>
+
+
+                <div class="staff-card">
+
+                    <div class="photo">
+                        PHOTO
+                    </div>
+
+                    <h3>Prénom Nom</h3>
+
+                    <p>Assistant</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RÉSULTATS -->
+
+        <section id="resultats" class="page">
+
+            <h2>Nos Résultats</h2>
+
+            <div class="results">
+
+                <div class="match">
+
+                    <span>
+                        TLG
+                    </span>
+
+                    <span class="score">
+                        0 - 0
+                    </span>
+
+                    <strong class="win">
+                        FF
+                    </strong>
+
+                </div>
+
+
+                <div class="match defaite">
+
+                    <span>
+                        TLG
+                    </span>
+
+                    <span class="score">
+                        0 - 0
+                    </span>
+
+                    <strong class="lose">
+                        FF
+                    </strong>
+
+                </div>
+
+
+                <div class="match">
+
+                    <span>
+                        TLG
+                    </span>
+
+                    <span class="score">
+                        0 - 0
+                    </span>
+
+                    <strong class="win">
+                        FF
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RÉSEAUX -->
+
+        <section id="reseaux" class="page">
+
+            <h2>Nos Réseaux</h2>
+
+            <div class="social-container">
+
+                <a href="#" class="social instagram">
+                    📸 Instagram
+                </a>
+
+                <a href="#" class="social youtube">
+                    ▶️ YouTube
+                </a>
+
+                <a href="#" class="social tiktok">
+                    🎵 TikTok
+                </a>
+
+                <a href="#" class="social discord">
+                    💬 Discord
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 Mon Équipe — Tous droits réservés
+    </footer>
+
+
+    <script>
+
+        /* =========================
+           JAVASCRIPT
+        ========================== */
+
+        function showPage(pageName, button) {
+
+            // Cacher toutes les pages
+            const pages = document.querySelectorAll(".page");
+
+            pages.forEach(function(page) {
+                page.classList.remove("active");
+            });
+
+
+            // Afficher la page demandée
+            const page = document.getElementById(pageName);
+
+            if (page) {
+                page.classList.add("active");
+            }
+
+
+            // Retirer la classe active des boutons
+            const buttons = document.querySelectorAll(".menu");
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+
+            // Activer le bouton sélectionné
+            if (button) {
+                button.classList.add("active");
+            }
+
+            // Retour en haut de la page
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        // Permet au bouton de l'accueil
+        // d'ouvrir la page Résultats
+
+        function showPageByName(pageName) {
+
+            const buttons = document.querySelectorAll(".menu");
+
+            buttons.forEach(function(button) {
+
+                if (
+                    button.textContent
+                        .trim()
+                        .toLowerCase()
+                        .includes(pageName)
+                ) {
+                    showPage(pageName, button);
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -405,7 +405,7 @@
             <button
                 class="menu"
                 onclick="showPage('resultats', this)">
-                Resultats
+                Résultats
             </button>
 
             <button
@@ -872,7 +872,7 @@
     <footer>
 
         © 2026 Talents Legacy Web — Fait par Antaax
-        
+
     </footer>
 
 
@@ -951,31 +951,11 @@
 
         function showPageByName(pageName) {
 
+            const page = document.getElementById(pageName);
 
-            const buttons =
-                document.querySelectorAll(".menu");
-
-
-            buttons.forEach(function(button) {
-
-
-                if (
-
-                    button.textContent
-                        .trim()
-                        .toLowerCase()
-                        .includes(pageName)
-
-                ) {
-
-                    showPage(
-                        pageName,
-                        button
-                    );
-
-                }
-
-            });
+            if (page) {
+                showPage(pageName);
+            }
 
         }
 
